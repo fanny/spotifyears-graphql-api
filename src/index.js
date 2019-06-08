@@ -1,10 +1,9 @@
 import { ApolloServer } from 'apollo-server'
-import artistSchema from './graphql/artist/schema'
-import artistResolvers from './graphql/artist/resolvers'
+import { typeDefs, resolvers } from './graphql'
 
-const server = new ApolloServer({ 
-    typeDefs: artistSchema,
-    resolvers: artistResolvers 
+const server = new ApolloServer({
+    typeDefs,
+    resolvers
 })
 
 server.listen().then(({ url }) => {

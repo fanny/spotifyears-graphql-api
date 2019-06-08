@@ -3,9 +3,9 @@ import { gql } from 'apollo-server'
 const artistSchema = gql`
 
     type Artist {
+        id: String
         href: String
         name: String
-        type: String
         uri: String
     }
 

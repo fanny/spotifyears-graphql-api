@@ -8,10 +8,12 @@ const trackSchema = gql`
         name: String
         popularity: Int
         uri: String
+        artist: Artist
     }
 
     extend type Query {
         tracks: [Track]
+        track(id: String): Track
     }
 
 `

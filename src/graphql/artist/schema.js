@@ -11,6 +11,7 @@ const artistSchema = gql`
 
     type Query {
         artists: [Artist]
+        artist(id: String): Artist
     }
 
 `

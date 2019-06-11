@@ -6,8 +6,9 @@ const artistResolvers = {
             const { offset, limit } = args
             return artistsData.slice(offset, limit)
         },
-        artist: (_parent, args, _context, _info) => {
-            return artistsData.find(artist => artist.id == args.id)
+        artist: (parent, args, _context, _info) => {
+            const id = args.id || parent.artistId
+            return artistsData.find(artist => artist.id == id)
         }
     },
     Mutation: {

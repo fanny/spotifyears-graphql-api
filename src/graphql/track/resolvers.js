@@ -12,12 +12,12 @@ const trackResolvers = {
         }
     },
     Track: {
-        artist:(parent, _args, _context, _info) => {
+        artist:(parent, _args, context, info) => {
             return artistResolver.Query.artist(
-                undefined,
+                parent,
                 {id: parent.artistId},
-                undefined,
-                undefined
+                context,
+                info
             )
         }
     }

@@ -18,7 +18,7 @@ const artistResolvers = {
                 code: 200,
                 success: true, 
                 status: "Ok",
-                message: "Your data is recovered"
+                message: "Your data was saved"
 
             }
         )

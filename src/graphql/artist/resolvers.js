@@ -2,7 +2,10 @@ import artistsData from '../../data/artists'
 
 const artistResolvers = {
     Query: {
-        artists: () => artistsData,
+        artists: (_parent, args, _context, _info) => {
+            const { offset, limit } = args
+            return artistsData.slice(offset, limit)
+        },
         artist: (_parent, args, _context, _info) => {
             return artistsData.find(artist => artist.id == args.id)
         }

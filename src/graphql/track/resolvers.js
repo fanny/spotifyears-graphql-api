@@ -3,7 +3,10 @@ import artistResolver from '../artist/resolvers'
 
 const trackResolvers = {
     Query: {
-        tracks: () => tracksData,
+        tracks: (_parent, args, _context, _info) => {
+            const { offset, limit } = args
+            return tracksData.slice(offset, limit)
+        },
         track: (_parent, args, _context, _info) => (
             tracksData.find(track => track.id == args.id)
         )

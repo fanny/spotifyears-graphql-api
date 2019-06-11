@@ -12,7 +12,7 @@ const trackSchema = gql`
     }
 
     extend type Query {
-        tracks: [Track]
+        tracks(offset: Int, limit: Int): [Track]
         track(id: String): Track
     }
 
